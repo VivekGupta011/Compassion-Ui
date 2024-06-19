@@ -1,0 +1,11 @@
+var contentful = require('contentful')
+const {space}=require("postcss/lib/list");
+
+const client = contentful.createClient({
+    space: '2lromyppl56i',
+    accessToken: 'Dr2_P0QHZbou2zeR6K6ccXoikIUuhGjiYVnPw_NieC0',
+    // space: process.env.space,
+    // accessToken: process.env.accessToken,
+  })
+
+  export default client;
