@@ -20,16 +20,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <SiteInfo/>
-      <CardInfo/>
-      <WorkRatio/>
-      <MiddleBgImage/>
-      <TargetPage/>
-      <Question/>
-      <Help/>
-      <Footer/>
-      <FooterInfo/>
+      <SanityCompoTest/>
     </>
   );
 }

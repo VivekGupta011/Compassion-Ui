@@ -46,7 +46,7 @@ const CardCategory = ({ CardData }: any) => {
               key={item.sys.id}
               className="bg-bg-sky-blue shadow-md rounded-lg overflow-hidden relative"
             >
-              <div className="absolute top-0 bg-bg-sky-blue left-0 text-custom-blue font-bold px-6 py-3 text-lg rounded-br flex items-center space-x-2">
+              <div className="absolute z-10 top-0 bg-bg-sky-blue left-0 text-custom-blue font-bold px-6 py-3 text-lg rounded-br flex items-center space-x-2">
                 <SaveChildIcon />
                 <span>{giftType}</span>
               </div>
