@@ -13,3 +13,11 @@
     }
   }
   
+
+  body {
+    margin: 0 auto;
+    max-width: 1920px;
+    background: #fff;
+    border-left: 1px solid #d9e1e2;
+    border-right: 1px solid #d9e1e2;
+}
