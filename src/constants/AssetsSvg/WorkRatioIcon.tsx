@@ -1,6 +1,12 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 
 const WorkRatioIcon = () => {
+  const [startAnimation, setStartAnimation] = useState(false);
+
+  useEffect(() => {
+    setStartAnimation(true);
+  }, []);
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -18,11 +24,10 @@ const WorkRatioIcon = () => {
         stroke-dashoffset="138"
         stroke="#0086bf"
         stroke-width="5"
-        // style="animation: 5s linear 0s 1 normal forwards running progress; transform-origin: center center; transform: rotate(-90deg);"
         style={{
-          animation: "progress 5s linear forwards",
+          animation: startAnimation ? "progress 5s linear forwards" : "none",
           transformOrigin: "center center",
-          transform: "rotate(-90deg)",
+          transform: "rotate(-60deg)",
         }}
       ></circle>
       <text x="92" y="80" fill="#0086bf" font-size="30" font-weight="bold">

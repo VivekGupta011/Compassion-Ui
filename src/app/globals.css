@@ -3,3 +3,13 @@
 @tailwind utilities;
 
 
+/* In your CSS file (e.g., styles.css) */
+@keyframes progress {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(90deg);
+    }
+  }
+  

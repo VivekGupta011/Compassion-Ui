@@ -1,5 +1,6 @@
 import Camp from "@/components/Camp";
 import CardInfo from "@/components/CardInfo";
+import CardInfoSanity from "@/components/CardInfoSanity";
 import Features from "@/components/Features";
 import Footer from "@/components/Footer";
 import FooterInfo from "@/components/FooterInfo";
@@ -20,7 +21,17 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <SanityCompoTest data={[]}/>
+      <Hero />
+      <SiteInfo/>
+      <CardInfoSanity/>
+      <WorkRatio/>
+      <MiddleBgImage/>
+      <TargetPage/>
+      <Question/>
+      <Help/>
+      <Footer/>
+      <FooterInfo/>
+
     </>
   );
 }
