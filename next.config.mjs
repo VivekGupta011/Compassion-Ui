@@ -1,4 +1,17 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+// next.config.mjs
 
-export default nextConfig;
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    images: {
+      dangerouslyAllowSVG: true,
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'media.graphassets.com',
+        },
+      ],
+    },
+  };
+  
+  export default nextConfig;
+  

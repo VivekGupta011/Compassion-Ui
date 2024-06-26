@@ -1,5 +1,6 @@
 import Camp from "@/components/Camp";
 import CardInfo from "@/components/CardInfo";
+import CardInfoHyGraph from "@/components/CardInfoHyGraph";
 import CardInfoSanity from "@/components/CardInfoSanity";
 import Features from "@/components/Features";
 import Footer from "@/components/Footer";
@@ -17,13 +18,13 @@ import TargetPage from "@/components/TargetPage";
 import WorkRatio from "@/components/WorkRatio";
 import MainLogo from "@/constants/AssetsSvg/MainLogo";
 
-export default function SanityCms() {
+export default function GraphCms() {
   return (
     <>
       <Navbar />
       <Hero />
       <SiteInfo/>
-      <CardInfoSanity/>
+      <CardInfoHyGraph/>
       <WorkRatio/>
       <MiddleBgImage/>
       <TargetPage/>

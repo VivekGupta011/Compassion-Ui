@@ -1,35 +1,45 @@
 "use client";
+
 import BlueGiftIcon from "@/constants/AssetsSvg/BlueGiftIcon";
 import React, { useEffect, useState } from "react";
 import CardCategory from "./CardCategory";
-import client from "@/contentful-cms/contentfulClient";
-import { Entry } from "contentful";
+import sanityCMSIntegration from "@/sanity-cms/sanityCMSIntegration";
+import groq from 'groq';
+import CardCategorySanity from "./CardCategorySanity";
+import CardCategoryHyGraph from "./CardCategoryHyGraph";
+import {CardsFetching} from "@/hygraph-cms/ContentFetching";
 
-
-const CardInfo = () => {
-  const [modalData, setModalData] = useState<Entry<any>[]>([]);
-
-  async function getEntriesByContentType(contentType: string) {
-    try {
-      const response = await client.getEntries<any>({ content_type: contentType });
-      return response.items;
-    } catch (error) {
-      console.error("Error fetching entries:", error);
-      return [];
-    }
-    
-  }
+const CardInfoHyGraph = () => {
+  const [modalData, setModalData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getEntriesByContentType("modal");
-      setModalData(data);
+      try {
+        const result=await CardsFetching();
+        setModalData(result?.compassionUis);
+      } catch (error:any) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchData();
   }, []);
 
-  console.log("Modal Data:", modalData);
+  console.log("Modal Graphql CMS Data:---", modalData);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+
+
 
   return (
     <section className="px-0 py-8 pb-20 md:py-12 md:pb-36">
@@ -57,7 +67,7 @@ const CardInfo = () => {
             </div>
           </div>
           <div>
-            <CardCategory CardData={modalData}/>
+             <CardCategoryHyGraph CardData={modalData}/>
           </div>
         </div>
       </div>
@@ -65,4 +75,4 @@ const CardInfo = () => {
   );
 };
 
-export default CardInfo;
+export default CardInfoHyGraph;
