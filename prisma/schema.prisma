@@ -1,0 +1,81 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model account_users {
+  id         Int
+  account_id Int
+  team_id    Int
+  fullName   String @db.VarChar(200)
+
+  @@ignore
+}
+
+model accounts {
+  id         Int    @id @default(autoincrement())
+  name       String @db.VarChar(200)
+  email      String @db.VarChar(200)
+  userTypeId Int
+}
+
+model campaigns {
+  id                           Int      @id
+  linkedinAccountId            Int
+  name                         String   @db.VarChar(200)
+  profileViewsMade             Int
+  inmailsSent                  Int
+  emailsSent                   Int
+  connectionsRequested         Int
+  messagesSent                 Int
+  connectionRequestsAccepted   Int
+  connectionsViaEmailRequested Int
+  connectionReplies            Int
+  responseRate                 String   @db.VarChar(50)
+  acceptanceRate               String   @db.VarChar(50)
+  openRate                     String   @db.VarChar(50)
+  clickRate                    String   @db.VarChar(50)
+  totalLeads                   Int
+  isActive                     Boolean
+  totalFollowCount             Int
+  emailsVerified               Int
+  bounceRate                   String   @db.VarChar(50)
+  emailsBounced                Int
+  remainingLeads               Int
+  createdAt                    DateTime @default(now()) @db.Timestamp(0)
+  updatedAt                    DateTime @default(dbgenerated("'0000-00-00 00:00:00'")) @db.Timestamp(0)
+}
+
+model leads {
+  id               Int     @id
+  linkedinUserId   String  @db.VarChar(50)
+  fullName         String  @db.VarChar(100)
+  occupation       String  @db.VarChar(200)
+  company          String  @db.VarChar(200)
+  connectionDegree Int
+  leadStatusId     Int
+  active           Boolean
+  email            String  @db.VarChar(100)
+  phone            String  @db.VarChar(100)
+  country          String  @db.VarChar(100)
+  campaignId       Int
+  linkedinUrl      String? @db.VarChar(200)
+}
+
+model users_summary {
+  summaryId             Int     @id @default(autoincrement())
+  clientName            String? @db.VarChar(200)
+  profileName           String? @db.VarChar(200)
+  totalLeads            Int?
+  invitedCount          Int?
+  connectedCount        Int?
+  messageSentCount      Int?
+  repliesReceivedCount  Int?
+  linkedinAccountUserId Int?
+  linkedinAccountId     Int?
+}
