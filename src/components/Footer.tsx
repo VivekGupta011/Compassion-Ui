@@ -47,7 +47,7 @@ const Footer = () => {
                   </a>
                 </li>
               </ul>
-              <ul className="flex list-none items-center justify-center gap-5">
+              {/* <ul className="flex list-none items-center justify-center gap-5">
                 <li className="h-[50px] w-auto before:hidden">
                   <a
                     href="https://itunes.apple.com/gb/app/compassion-uk-org/id1436294092?mt=8"
@@ -66,7 +66,7 @@ const Footer = () => {
                     <PlayStore />
                   </a>
                 </li>
-              </ul>
+              </ul> */}
             </div>
           </div>
         </div>
