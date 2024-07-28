@@ -13,7 +13,7 @@ const TargetPage = () => {
               Interventions
             </h2>
             <p className="px-0 text-lg text-compassion-black md:px-20 md:text-lg">
-              Since 1952, Compassion has been protecting some of the world's
+              Since 1952, Compassion has been protecting some of the worlds
               most vulnerable children and young people. Complementing the work
               of our child sponsorship programme, interventions provide children
               and their families with vital support such as malaria nets, clean
