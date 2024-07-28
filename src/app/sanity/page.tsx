@@ -22,9 +22,9 @@ export default function SanityCms() {
     <>
       <Navbar />
       <Hero />
-      <SiteInfo/>
-      <CardInfoSanity/>
-      <WorkRatio/>
+      {/* <SiteInfo/> */}
+      {/* <CardInfoSanity/>
+      <WorkRatio/> */}
       <MiddleBgImage/>
       <TargetPage/>
       <Question/>

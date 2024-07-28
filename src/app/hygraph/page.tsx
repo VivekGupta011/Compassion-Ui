@@ -23,9 +23,9 @@ export default function GraphCms() {
     <>
       <Navbar />
       <Hero />
-      <SiteInfo/>
+      {/* <SiteInfo/>
       <CardInfoHyGraph/>
-      <WorkRatio/>
+      <WorkRatio/> */}
       <MiddleBgImage/>
       <TargetPage/>
       <Question/>
